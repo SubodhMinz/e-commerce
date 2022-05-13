@@ -1,0 +1,31 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Men Wear{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+  <div class="row">
+    <div class="col-sm-2 bg-dark p-3" style="height: 10rem;">
+      <div class="list-group">
+        <a href="{% url 'product-fltr' 'mw' %}" class="list-group-item list-group-item-action " aria-current="true">
+          All Products
+        </a>
+        <a href="{% url 'product-fltr' 'addi' %}" class=" list-group-item list-group-item-action">Addidas</a>
+        <a href="{% url 'product-fltr' 'puma' %}" class=" list-group-item list-group-item-action">Puma</a>
+      </div>
+    </div>
+    <div class="col-sm-9 offset-sm-1">
+      <div class="row bg-dark px-0 py-3">
+        {% for fp in filter_prod %}
+        <div class="item col-sm-4 mb-4 text-center">
+          <a href="{% url 'product-detail' fp.id %}" style="text-decoration: none;">
+          <img src="{{fp.prod_img.url}}" alt="" width="200px">
+          <p class="mb-0 mt-2 fs-4 fw-bold text-light">{{fp.title}}</p>
+          <p class="fs-6 text-light">{{fp.discounted_price}}</p>
+        </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock main-content %}

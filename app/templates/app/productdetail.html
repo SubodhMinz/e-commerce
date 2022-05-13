@@ -1,0 +1,32 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Product Detail{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+ <div class="row">
+  <div class="col-sm-6 text-center align-self-center">
+   <img src="{{prod_detail.prod_img.url}}" alt="" class="img-fluid img-thumbnail">
+  </div>
+  <div class="col-sm-5 offset-sm-1">
+   <h2>{{prod_detail.title}}</h2>
+   <hr>
+   <p>{{prod_detail.description}} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, sed.</p> <br>
+   <h4>{{prod_detail.discounted_price}}<small class="fw-light text-decoration-line-through">{{prod_detail.selling_price}}</small></h4> <br>
+
+    <form action="/add-to-cart" class="d-inline">
+        <input type="hidden" name="prod_id" id="prod_id" value="{{prod_detail.id}}">
+        <button type="submit" class="btn btn-info shadow px-5 py-2">Add to Cart</button>
+    </form>
+
+   <a href="{% url 'show_cart' %}" class="btn btn-secondary shadow px-5 py-2 ms-4">Buy Now</a>
+   <h5 class="mt-5">Available Offers</h5>
+   <ul>
+       <li>Special Price Get extra ₹3000 off (price inclusive of discount)</li>
+       <li>Partner Offer ₹2000 Flipkart Gift Card on Every 1000th Transaction with a new Visa Debit/Credit Card</li>
+       <li>Bank Offer 5% Unlimited Cashback on Flipkart Axis Bank Credit</li>
+    <li>No cost EMI ₹1,667/month. Standard EMI also available</li>
+   </ul>
+  </div>
+ </div>
+</div>
+{% endblock main-content %}

@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.owl-carousel .item{
+ /* border: 1px solid black; */
+ font-size: 24px;
+ text-align: center;
+ margin-top: 20px;;
+}
+
+.owl-next{
+ float:right;
+}
+.owl-prev{
+ float:left;
+}
+.owl-prev span{
+ font-size: 24px;
+ font-weight: bold;
+}
+.owl-next span{
+ font-size: 24px;
+ font-weight: bold;
+}
+
+
+/* signup */
+.signup input{
+    width: 100%;
+    height: 2.5em;
+    padding: 0 0.5em;
+}
+
+/* login */
+.login input{
+    width: 100%;
+    height: 2.5em;
+    padding: 0 0.5em;
+}
+
+/* Change Password */
+.change-password input{
+    width: 100%;
+    height: 2.5em;
+    padding: 0 0.5em;
+}
